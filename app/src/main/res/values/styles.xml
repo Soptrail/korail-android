@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SemiBold">
+        <item name="fontWeight">600</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SemiBold.30">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="SemiBold.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Medium">
+        <item name="fontWeight">500</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Medium.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Medium.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Medium.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Medium.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Regular">
+        <item name="fontWeight">400</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Regular.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>
