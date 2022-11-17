@@ -1,12 +1,12 @@
 package com.sopt.seminar9.korail.presentation.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.sopt.seminar9.korail.R
+import com.sopt.seminar9.korail.databinding.ActivityMainBinding
+import com.sopt.seminar9.korail.presentation.common.binding.BindingActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BindingActivity<ActivityMainBinding>({ ActivityMainBinding.inflate(it) }) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
     }
 }

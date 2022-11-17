@@ -1,4 +1,4 @@
-package com.sopt.seminar9.korail.presentation.common.base
+package com.sopt.seminar9.korail.presentation.common.binding
 
 import android.os.Bundle
 import android.view.LayoutInflater
