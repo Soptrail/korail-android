@@ -10,5 +10,8 @@
     <!-- show train -->
     <string name="show_train_title">열차 조회</string>
 
+    <!-- error -->
+    <string name="error_not_found_menu_item">Not found menu item id</string>
+
 
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_book_ticket"
+        android:icon="@drawable/ic_nav_black_book_ticket"
+        android:title="@string/nav_book_ticket_title" />
+    <item
+        android:id="@+id/menu_discount_ticket"
+        android:icon="@drawable/ic_nav_black_discount_ticket"
+        android:title="@string/nav_discount_ticket_title" />
+    <item
+        android:id="@+id/menu_tour_product"
+        android:icon="@drawable/ic_nav_black_tour_product"
+        android:title="@string/nav_tour_product_title" />
+
+    <item
+        android:id="@+id/menu_check_ticket"
+        android:icon="@drawable/ic_nav_black_check_ticket"
+        android:title="@string/nav_check_ticket_title" />
+</menu>
