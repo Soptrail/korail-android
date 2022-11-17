@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">KorailAndroid</string>
+
+    <!-- main -->
+    <string name="nav_book_ticket_title">승차권 예매</string>
+    <string name="nav_discount_ticket_title">할인•정기권</string>
+    <string name="nav_tour_product_title">관광상품</string>
+    <string name="nav_check_ticket_title">승차권 확인</string>
+
+    <!-- show train -->
+    <string name="show_train_title">열차 조회</string>
+
+
 </resources>
