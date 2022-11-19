@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- spacing -->
+    <dimen name="spacing9">9dp</dimen>
+    <dimen name="spacing16">16dp</dimen>
+    <dimen name="spacing18">18dp</dimen>
+    <dimen name="spacing24">24dp</dimen>
+    <dimen name="spacing30">30dp</dimen>
+
+    <!-- corner -->
+    <dimen name="corner5">5dp</dimen>
+    <dimen name="corner10">10dp</dimen>
+    <dimen name="corner20">20dp</dimen>
+    <dimen name="corner30">30dp</dimen>
+
+    <!-- height -->
+    <dimen name="height56">56dp</dimen>
+</resources>
