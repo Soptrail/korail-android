@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="14dp"
+    android:background="@Color/background_F5F5F5">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/show_back_button"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toTopOf="@id/show_top_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_top_text"
+        app:layout_constraintBottom_toBottomOf="@id/show_top_text"
+        android:backgroundTint="@Color/black"
+        android:background="@drawable/ic_back"/>
+
+    <TextView
+        android:id="@+id/show_top_text"
+        android:layout_width="71dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginLeft="147dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/show_train_title"
+        style="@style/Medium.18"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@Color/white"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/show_back_button"
+        app:layout_constraintStart_toStartOf="@id/show_back_button"
+        app:layout_constraintStart_toEndOf="parent">
+
+
+    </View>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
