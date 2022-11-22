@@ -1,73 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--<data>
+    리사이클러뷰 뷰모델과 연결 후 선택되었을 때 파란색으로 바꾸기 위한 조건
     <variable
         name="vm"
         type="com.example.kotlinprac.recyclerview.selectsingleitem.SimpleModel" />
 </data>-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:layout_height="60dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="match_parent"
-        app:layout_constraintStart_toStartOf="match_parent"
         app:layout_constraintStart_toEndOf="match_parent"
-        android:gravity="center"
-        android:background="@color/sub_blue_F2F6FF">
-<!--        android:background="@{model.selected ? @color/primary_blue_2C80FF :@color/primary_blue_2C80FF, defalut=@color/write}"-->
+        app:layout_constraintStart_toStartOf="match_parent"
+        app:layout_constraintTop_toBottomOf="match_parent">
+        <!--        android:background="@{model.selected ? @color/primary_blue_2C80FF :@color/primary_blue_2C80FF, defalut=@color/write}"-->
 
         <TextView
             android:id="@+id/txt_train"
-            android:layout_width="65dp"
-            android:layout_height="match_parent"
-            android:text="무1314"
+            style="@style/Medium.12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="23dp"
             android:gravity="center"
-            style="@style/Medium.14"
-            />
+            android:text="무1314"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/txt_time_depart"
-            android:layout_width="65dp"
+            style="@style/Medium.12"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="06:39"
+            android:layout_marginStart="30dp"
             android:gravity="center"
-            style="@style/Medium.14"
-            />
+            android:text="06:39"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_train"
+            app:layout_constraintStart_toEndOf="@+id/txt_train"
+            app:layout_constraintTop_toTopOf="@+id/txt_train" />
 
         <TextView
             android:id="@+id/txt_time_arrive"
-            android:layout_width="65dp"
+            style="@style/Medium.12"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="08:01"
+            android:layout_marginStart="32dp"
             android:gravity="center"
-            style="@style/Medium.14"
-            />
+            android:text="08:01"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_time_depart"
+            app:layout_constraintStart_toEndOf="@+id/txt_time_depart"
+            app:layout_constraintTop_toTopOf="@+id/txt_time_depart" />
 
         <TextView
             android:id="@+id/txt_price"
-            android:layout_width="65dp"
-            android:layout_height="match_parent"
-            android:text="7,800"
+            style="@style/Medium.12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/bg_price_button"
+            android:textColor="@color/primary_blue_2C80FF"
             android:gravity="center"
-            style="@style/Medium.14"
-            />
+            android:paddingStart="10dp"
+            android:paddingTop="9dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="9dp"
+            android:text="7,800₩"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_time_arrive"
+            app:layout_constraintStart_toEndOf="@+id/txt_time_arrive"
+            app:layout_constraintTop_toTopOf="@+id/txt_time_arrive" />
 
         <TextView
-            android:id="@+id/txt_special"
-            android:layout_width="65dp"
-            android:layout_height="match_parent"
-            android:text="-"
+            android:id="@+id/txt_special_price"
+            style="@style/Medium.12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_price_button_selected"
+            android:textColor="@color/white"
             android:gravity="center"
-            style="@style/Medium.14"
-            />
-    </LinearLayout>
+            android:paddingStart="10dp"
+            android:paddingTop="9dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="9dp"
+            android:text="11,800₩"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_price"
+            app:layout_constraintStart_toEndOf="@+id/txt_price"
+            app:layout_constraintTop_toTopOf="@+id/txt_price"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        />
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
