@@ -24,9 +24,9 @@
         style="@style/Medium.18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="147dp"
         android:layout_marginTop="63dp"
         android:text="@string/show_train_title"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,8 +52,8 @@
 
         <ImageView
             android:id="@+id/img_arrive_arrow"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="18dp"
+            android:layout_height="10dp"
             android:layout_marginTop="21dp"
             android:background="@drawable/ic_big_arrow"
             android:gravity="center"
@@ -210,7 +210,7 @@
                 android:layout_marginTop="21dp"
                 app:layout_constraintTop_toTopOf="@+id/txt_show_title_special"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/layout_show_train_info" />&ndash;&gt;
+                tools:listitem="@layout/item_show_train_info" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

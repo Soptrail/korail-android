@@ -15,9 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="match_parent"
-        app:layout_constraintStart_toStartOf="match_parent"
-        app:layout_constraintTop_toBottomOf="match_parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
         <!--        android:background="@{model.selected ? @color/primary_blue_2C80FF :@color/primary_blue_2C80FF, defalut=@color/write}"-->
 
         <TextView
@@ -66,13 +66,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:background="@drawable/bg_price_button"
-            android:textColor="@color/primary_blue_2C80FF"
             android:gravity="center"
             android:paddingStart="10dp"
             android:paddingTop="9dp"
             android:paddingEnd="7dp"
             android:paddingBottom="9dp"
             android:text="7,800₩"
+            android:textColor="@color/primary_blue_2C80FF"
             app:layout_constraintBottom_toBottomOf="@+id/txt_time_arrive"
             app:layout_constraintStart_toEndOf="@+id/txt_time_arrive"
             app:layout_constraintTop_toTopOf="@+id/txt_time_arrive" />
@@ -84,13 +84,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:background="@drawable/bg_price_button_selected"
-            android:textColor="@color/white"
             android:gravity="center"
             android:paddingStart="10dp"
             android:paddingTop="9dp"
             android:paddingEnd="7dp"
             android:paddingBottom="9dp"
             android:text="11,800₩"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/txt_price"
             app:layout_constraintStart_toEndOf="@+id/txt_price"
             app:layout_constraintTop_toTopOf="@+id/txt_price"
