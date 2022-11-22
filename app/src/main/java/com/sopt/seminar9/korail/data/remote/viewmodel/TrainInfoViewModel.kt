@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sopt.seminar9.korail.data.remote.api.ApiPool
+import com.sopt.seminar9.korail.data.remote.model.response.Show_Train
+import com.sopt.seminar9.korail.data.remote.model.response.Show_Train_Info
 import com.sopt.seminar9.korail.data.remote.model.response.TrainInfoResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -13,8 +15,8 @@ import retrofit2.Response
 
 class TrainInfoViewModel: ViewModel() {
         private val trainInfoApi = ApiPool.trainInfoApi
-        private val _getResult: MutableLiveData<TrainInfoResponse> = MutableLiveData()
-        val getResult: LiveData<TrainInfoResponse>
+        private val _getResult: MutableLiveData<Show_Train_Info> = MutableLiveData()
+        val getResult: LiveData<Show_Train_Info>
             get() = _getResult
         private val _successGet = MutableLiveData<Boolean>()
         val successGet: LiveData<Boolean>
@@ -40,7 +42,8 @@ class TrainInfoViewModel: ViewModel() {
                         }
                     }
                     if (response.isSuccessful) {
-                        _getResult.value = response.body()
+                        Log.e("500", "서버통신 성공")
+                        _getResult.value = response.body()?.data
                         _successGet.value = true
                     }
                 }

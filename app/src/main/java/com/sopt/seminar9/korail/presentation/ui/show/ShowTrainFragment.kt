@@ -7,12 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import com.sopt.seminar9.korail.data.remote.dataadapter.TrainInfoAdapter
 import com.sopt.seminar9.korail.data.remote.viewmodel.TrainInfoViewModel
 import com.sopt.seminar9.korail.databinding.FragmentShowTrainBinding
 import com.sopt.seminar9.korail.presentation.common.binding.BindingFragment
 
 class ShowTrainFragment : BindingFragment<FragmentShowTrainBinding>() {
-    private val homeViewmodel by viewModels<TrainInfoViewModel>()
+    private val trainInfoViewModel by viewModels<TrainInfoViewModel>()
     override fun getFragmentBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -24,22 +25,24 @@ class ShowTrainFragment : BindingFragment<FragmentShowTrainBinding>() {
         super.onViewCreated(view, savedInstanceState)
         returnBackFragment()
         binding.showProgressBar.isVisible = true // 로딩뷰 활성화
-        homeViewmodel.getList()
-        /*homeViewmodel.successGet.observe(viewLifecycleOwner){ success ->
-            if(success){
-                Log.d(homeViewmodel.getResult.value?.data.toString(), "data")
+        trainInfoViewModel.getList()
+        trainInfoViewModel.successGet.observe(viewLifecycleOwner){ success ->
+            if(success) {
+                Log.d("data", trainInfoViewModel.getResult.value.toString())
                 val adapter = context?.let { it1 ->
-                    homeViewmodel.getResult.value?.let {
-                        TrainInfoadapter(homeViewmodel.getResult.value!!.data, it1).apply {
-                            Log.d(homeViewmodel.getResult.value!!.toString(), "data")
-                            setRepoList(homeViewmodel.getResult.value!!.data)
+                    trainInfoViewModel.getResult.value?.let {
+                        TrainInfoAdapter(trainInfoViewModel.getResult.value!!.TrainInformation, it1).apply {
+                            setRepoList(trainInfoViewModel.getResult.value!!.TrainInformation)
                         }
                     }
                 }
-                binding.rvRepos.adapter = adapter
+                binding.txtShowPlaceDepart.text = trainInfoViewModel.getResult.value?.Departures
+                binding.txtShowPlaceArrive.text = trainInfoViewModel.getResult.value?.Arrivals
+                binding.txtShowDate.text = trainInfoViewModel.getResult.value?.StartDate
+                binding.rvTrain.adapter = adapter
                 binding.showProgressBar.isVisible = false // 서버통신 완료 -> 로딩뷰 비활성화
-            }*/
-       // }
+            }
+        }
 
     }
 
