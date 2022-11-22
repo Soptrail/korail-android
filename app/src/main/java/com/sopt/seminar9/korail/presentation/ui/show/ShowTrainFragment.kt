@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import com.sopt.seminar9.korail.R
 import com.sopt.seminar9.korail.data.remote.dataadapter.TrainInfoAdapter
 import com.sopt.seminar9.korail.data.remote.viewmodel.TrainInfoViewModel
 import com.sopt.seminar9.korail.databinding.FragmentShowTrainBinding
@@ -24,6 +26,7 @@ class ShowTrainFragment : BindingFragment<FragmentShowTrainBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // 서버통신으로 리사이클러 뷰에 아이템들 연결해야 함
         super.onViewCreated(view, savedInstanceState)
         returnBackFragment()
+        setSpinner()
         binding.showProgressBar.isVisible = true // 로딩뷰 활성화
         trainInfoViewModel.getList()
         trainInfoViewModel.successGet.observe(viewLifecycleOwner){ success ->
@@ -44,10 +47,16 @@ class ShowTrainFragment : BindingFragment<FragmentShowTrainBinding>() {
             }
         }
 
-    }
+   }
 
-    private fun dataToView(){
+    private fun setSpinner(){ // Spinner 세팅
+        val TrainKind = listOf("전체", "ktx", "무궁화")
+        val SeatKind = listOf("일반석", "특/우등석")
+        val MoveKind = listOf("직통", "일반") // xml에 저장하는 방법과 변수로 저장하는 방법으로 나뉨
 
+        binding.showSpinnerLeft.adapter = ArrayAdapter(requireContext(), R.layout.item_spinner, TrainKind)
+        binding.showSpinnerCenter.adapter = ArrayAdapter(requireContext(), R.layout.item_spinner, SeatKind)
+        binding.showSpinnerRight.adapter = ArrayAdapter(requireContext(), R.layout.item_spinner, MoveKind)
     }
 
     private fun returnBackFragment() // 뒤로가기 버튼 클릭 시 직전 fragment로 이동

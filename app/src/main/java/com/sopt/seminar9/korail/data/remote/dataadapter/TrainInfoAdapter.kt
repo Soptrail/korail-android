@@ -8,6 +8,7 @@ import com.sopt.seminar9.korail.data.remote.model.response.Show_Train
 import com.sopt.seminar9.korail.data.remote.model.response.Show_Train_Info
 import com.sopt.seminar9.korail.databinding.FragmentShowTrainBinding
 import com.sopt.seminar9.korail.databinding.ItemShowTrainInfoBinding
+import java.text.DecimalFormat
 
 
 class TrainInfoAdapter(Item: List<Show_Train>, context: Context) : RecyclerView.Adapter<TrainInfoAdapter.TrainViewHolder>() {
@@ -22,8 +23,8 @@ class TrainInfoAdapter(Item: List<Show_Train>, context: Context) : RecyclerView.
             binding.txtTrain.text = data.TrainName
             binding.txtTimeDepart.text = data.StartTime
             binding.txtTimeArrive.text = data.LastTime
-            binding.txtPrice.text = data.NormalPrice + "₩"
-            binding.txtSpecialPrice.text = data.SpecialPrice + "₩"
+            binding.txtPrice.text = if(data.NormalPrice == "0"){"   매진   "}else{DecimalFormat("#,###").format(data.NormalPrice.toInt()) + "₩"}
+            binding.txtSpecialPrice.text = if(data.SpecialPrice == "0"){"-"}else{DecimalFormat("#,###").format(data.SpecialPrice.toInt()) + "₩"}
         }
     }
 
