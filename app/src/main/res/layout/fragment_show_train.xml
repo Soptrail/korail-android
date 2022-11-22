@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_F5F5F5">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/show_back_button_top"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_back"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/show_top_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_top_text"
+        app:layout_constraintTop_toTopOf="@id/show_top_text"
+        app:layout_constraintVertical_bias="0.857" />
+
+    <TextView
+        android:id="@+id/show_top_text"
+        style="@style/Medium.18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:text="@string/show_train_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_white_round"
+        android:elevation="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/show_top_text">
+
+        <TextView
+            android:id="@+id/txt_show_place_depart"
+            style="@style/SemiBold.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="서울"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/img_arrive_arrow"
+            app:layout_constraintTop_toTopOf="@+id/img_arrive_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/img_arrive_arrow"/>
+
+        <ImageView
+            android:id="@+id/img_arrive_arrow"
+            android:layout_width="18dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/ic_big_arrow"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_show_place_arrive"
+            style="@style/SemiBold.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="12dp"
+            android:text="천안"
+            app:layout_constraintStart_toEndOf="@+id/img_arrive_arrow"
+            app:layout_constraintTop_toTopOf="@+id/img_arrive_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/img_arrive_arrow"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/show_button_date_left"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_show_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_show_date" />
+
+        <TextView
+            android:id="@+id/txt_show_date"
+            style="@style/SemiBold.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="2022. 11.05 (토)"
+            app:layout_constraintEnd_toStartOf="@+id/show_button_date_left"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toEndOf="@+id/show_button_date_right"
+            app:layout_constraintTop_toBottomOf="@+id/img_arrive_arrow" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/show_button_date_right"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="@color/black"
+            android:gravity="right"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_show_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_show_date" />
+
+        <Spinner
+            android:id="@+id/show_spinner_left"
+            android:layout_width="108dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/spinner_selector"
+            app:layout_constraintBottom_toBottomOf="@+id/show_spinner_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/show_spinner_center" />
+
+        <Spinner
+            android:id="@+id/show_spinner_center"
+            android:layout_width="109dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            android:background="@drawable/spinner_selector"
+            app:layout_constraintStart_toEndOf="@+id/show_spinner_left"
+            app:layout_constraintEnd_toStartOf="@+id/show_spinner_right"
+            app:layout_constraintTop_toBottomOf="@+id/txt_show_date" />
+
+        <Spinner
+            android:id="@+id/show_spinner_right"
+            android:layout_width="76dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="11dp"
+            android:background="@drawable/spinner_selector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/show_spinner_center" />
+
+
+        <TextView
+            android:id="@+id/txt_show_title_train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="39dp"
+            android:gravity="center"
+            android:text="열차"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_show_title_depart"
+            app:layout_constraintEnd_toStartOf="@+id/txt_show_title_depart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_show_title_depart"></TextView>
+
+        <TextView
+            android:id="@+id/txt_show_title_depart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginEnd="35dp"
+            android:text="출발"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_show_title_arrive"
+            app:layout_constraintEnd_toStartOf="@+id/txt_show_title_arrive"
+            app:layout_constraintTop_toTopOf="@+id/txt_show_title_arrive"></TextView>
+
+        <TextView
+            android:id="@+id/txt_show_title_arrive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="도착"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="39dp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_show_title_normal"
+            app:layout_constraintTop_toBottomOf="@+id/show_spinner_center"></TextView>
+
+        <TextView
+            android:id="@+id/txt_show_title_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="39dp"
+            android:layout_marginEnd="35dp"
+            android:text="일반실"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_show_title_arrive"
+            app:layout_constraintEnd_toStartOf="@+id/txt_show_title_special"
+            app:layout_constraintTop_toTopOf="@+id/txt_show_title_arrive"></TextView>
+
+        <TextView
+            android:id="@+id/txt_show_title_special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:gravity="center"
+            android:text="특/우등"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_show_title_arrive"
+            app:layout_constraintStart_toStartOf="@+id/txt_show_title_normal"
+            app:layout_constraintTop_toTopOf="@+id/txt_show_title_arrive"></TextView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_train"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="21dp"
+                app:layout_constraintTop_toTopOf="@+id/txt_show_title_special"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_show_train_info" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
