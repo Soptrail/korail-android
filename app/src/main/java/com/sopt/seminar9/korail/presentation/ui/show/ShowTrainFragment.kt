@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.sopt.seminar9.korail.R
 import com.sopt.seminar9.korail.data.remote.dataadapter.TrainInfoAdapter
+import com.sopt.seminar9.korail.data.remote.model.response.Show_Train
 import com.sopt.seminar9.korail.data.remote.viewmodel.TrainInfoViewModel
 import com.sopt.seminar9.korail.databinding.FragmentShowTrainBinding
 import com.sopt.seminar9.korail.presentation.common.binding.BindingFragment
@@ -39,14 +40,14 @@ class ShowTrainFragment : BindingFragment<FragmentShowTrainBinding>() {
                         }
                     }
                 }
+
                 binding.txtShowPlaceDepart.text = trainInfoViewModel.getResult.value?.Departures
                 binding.txtShowPlaceArrive.text = trainInfoViewModel.getResult.value?.Arrivals
                 binding.txtShowDate.text = trainInfoViewModel.getResult.value?.StartDate
                 binding.rvTrain.adapter = adapter
-                binding.showProgressBar.isVisible = false // 서버통신 완료 -> 로딩뷰 비활성화
+                binding.showProgressBar.isVisible = false // 서버통신 완료 -> 로딩뷰 비활성
             }
         }
-
    }
 
     private fun setSpinner(){ // Spinner 세팅
@@ -72,4 +73,6 @@ class ShowTrainFragment : BindingFragment<FragmentShowTrainBinding>() {
             return ShowTrainFragment()
         }
     }
+
+
 }
