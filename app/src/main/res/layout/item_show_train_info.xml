@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<data>
-    현재 처리해야 할 뷰와 로직의 상호작용
-
-    <variable
-        name="vm"
-        type="com.sopt.seminar9.korail.presentation.ui.show." />
-</data>-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,21 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@drawable/item_color_selector"
+    android:background="@drawable/item_bg_color_selector"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
->
+    app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/txt_train"
-            style="@style/Medium.12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="23dp"
             android:gravity="center"
+            android:textSize="12sp"
             android:text="무1314"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,23 +28,23 @@
 
         <TextView
             android:id="@+id/txt_time_depart"
-            style="@style/Medium.12"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="24dp"
             android:gravity="center"
             android:text="06:39"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/txt_train"
             app:layout_constraintStart_toEndOf="@+id/txt_train"
             app:layout_constraintTop_toTopOf="@+id/txt_train" />
 
         <TextView
             android:id="@+id/txt_time_arrive"
-            style="@style/Medium.12"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="22dp"
             android:gravity="center"
+            android:textSize="12sp"
             android:text="08:01"
             app:layout_constraintBottom_toBottomOf="@+id/txt_time_depart"
             app:layout_constraintStart_toEndOf="@+id/txt_time_depart"
