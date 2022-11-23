@@ -10,7 +10,6 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.sopt.seminar9.korail.R
 import com.sopt.seminar9.korail.data.remote.dataadapter.TrainInfoAdapter
-import com.sopt.seminar9.korail.data.remote.model.response.Show_Train
 import com.sopt.seminar9.korail.data.remote.viewmodel.TrainInfoViewModel
 import com.sopt.seminar9.korail.databinding.FragmentShowTrainBinding
 import com.sopt.seminar9.korail.presentation.common.binding.BindingFragment
@@ -24,7 +23,7 @@ class ShowTrainFragment : BindingFragment<FragmentShowTrainBinding>() {
         return FragmentShowTrainBinding.inflate(inflater, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // 서버통신으로 리사이클러 뷰에 아이템들 연결해야 함
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         returnBackFragment()
         setSpinner()
@@ -39,12 +38,12 @@ class ShowTrainFragment : BindingFragment<FragmentShowTrainBinding>() {
                             setRepoList(trainInfoViewModel.getResult.value!!.TrainInformation)
                         }
                     }
-                }
+                } // 서버통신을 통해 리사이클러뷰 어댑터에 아이템 세팅
 
                 binding.txtShowPlaceDepart.text = trainInfoViewModel.getResult.value?.Departures
                 binding.txtShowPlaceArrive.text = trainInfoViewModel.getResult.value?.Arrivals
                 binding.txtShowDate.text = trainInfoViewModel.getResult.value?.StartDate
-                binding.rvTrain.adapter = adapter
+                binding.rvTrain.adapter = adapter // 어댑터 연결
                 binding.showProgressBar.isVisible = false // 서버통신 완료 -> 로딩뷰 비활성
             }
         }
