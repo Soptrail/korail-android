@@ -20,23 +20,16 @@ class TrainInfoAdapter(Item: List<Show_Train>, context: Context) : RecyclerView.
     private var trainList: List<Show_Train> = emptyList()
     lateinit var binding: ItemShowTrainInfoBinding
     private var selectedPosition = -1
-    private var nextflag = 0
 
     inner class TrainViewHolder(
         private var binding: ItemShowTrainInfoBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        @SuppressLint("ResourceAsColor")
+        var isEnablecheck = true
         fun onBind(data: Show_Train) {
-            binding.txtTrain.text = data.TrainName
-            binding.txtTimeDepart.text = data.StartTime
-            binding.txtTimeArrive.text = data.LastTime
-/*            if(data.NormalPrice == "0"){ // 매진 상태 감지 시 뷰 설정 변경
-                binding.txtTrain.setTextColor(R.color.gray_2_8A8A8A)
-                binding.txtTimeDepart.setTextColor(R.color.gray_2_8A8A8A)
-                binding.txtTimeArrive.setTextColor(R.color.gray_2_8A8A8A)
-                binding.txtPrice.setBackgroundResource(R.drawable.bg_price_button)
-            }*/
-            binding.txtPrice.text = if (data.NormalPrice == "0") { "   매진   " } else { DecimalFormat("#,###").format(data.NormalPrice.toInt()) + "₩" }
+            binding.vh = this
+            binding.showItemView.isSelected = (selectedPosition == absoluteAdapterPosition)
+            binding.showItemView.isEnabled = (data.NormalPrice != "0") // 매진 아이템은 Enabled false로 구별
+            isEnablecheck = binding.showItemView.isEnabled
             if(data.SpecialPrice == "0"){
                 binding.txtSpecialPrice.text = "-"
                 binding.txtSpecialPrice.setBackgroundResource(R.drawable.item_bg_color_selector)
@@ -44,8 +37,18 @@ class TrainInfoAdapter(Item: List<Show_Train>, context: Context) : RecyclerView.
             } else {
                binding.txtSpecialPrice.text= DecimalFormat("#,###").format(data.SpecialPrice.toInt()) + "₩"
             }
-            binding.showItemView.isSelected = (selectedPosition == absoluteAdapterPosition)
-            binding.showItemView.isEnabled = (data.NormalPrice != "0") // 매진 아이템은 Enabled false로 구별
+            binding.txtTrain.text = data.TrainName
+            binding.txtTimeDepart.text = data.StartTime
+            binding.txtTimeArrive.text = data.LastTime
+            binding.txtPrice.text = if (data.NormalPrice == "0") { "   매진   " } else { DecimalFormat("#,###").format(data.NormalPrice.toInt()) + "₩" }
+            Log.d("tag1", isEnablecheck.toString())
+            /*if(!binding.showItemView.isEnabled){ // 매진 상태 감지 시 뷰 설정 변경
+*//*                binding.txtTrain.setTextColor(R.color.gray_2_8A8A8A)
+                binding.txtTimeDepart.setTextColor(R.color.gray_2_8A8A8A)
+                binding.txtTimeArrive.setTextColor(R.color.gray_2_8A8A8A)
+                binding.txtPrice.setTextColor(R.color.gray_2_8A8A8A)*//*
+               // binding.txtPrice.setBackgroundResource(R.drawable.price_button_selector)
+            }*/
 
             binding.showItemView.setOnClickListener {
                 if(binding.showItemView.isEnabled) {
