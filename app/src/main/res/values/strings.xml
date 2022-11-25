@@ -10,6 +10,31 @@
     <!-- show train -->
     <string name="show_train_title">열차 조회</string>
 
+    <!-- check ticket -->
+    <string name="check_ticket_train_logo_desc">기차 로고입니다.</string>
+    <string name="check_ticket_qr_code_desc">QR 코드입니다.</string>
+    <string name="check_ticket_train_number">1151</string>
+    <string name="check_ticket_delay_content">서울역에서 5분 지연</string>
+    <string name="check_ticket_start_date">2022년 11월 9일 (수)</string>
+    <string name="check_ticket_departure">서울</string>
+    <string name="check_ticket_arrival">천안</string>
+    <string name="check_ticket_start_time">11:30</string>
+    <string name="check_ticket_taken_time">1시간 35분</string>
+    <string name="check_ticket_end_time">13:05</string>
+    <string name="check_ticket_train_info_sign">열차 정보</string>
+    <string name="check_ticket_train_station_number_sign">타는 곳</string>
+    <string name="check_ticket_station_number">5번</string>
+    <string name="check_ticket_car_number_sign">호차</string>
+    <string name="check_ticket_car_number">2호차</string>
+    <string name="check_ticket_seat_number_sign">좌석</string>
+    <string name="check_ticket_seat_number">37</string>
+    <string name="check_ticket_btn_text_refund">열차표 환불</string>
+    <string name="check_ticket_btn_text_give">열차표 전달</string>
+    <string name="check_ticket_btn_text_declare">범죄 신고</string>
+    <string name="check_ticket_btn_text_help">도우미 신청</string>
+    <string name="check_ticket_bottom_info">일반실 | 순방향 | 어른\n승차권 번호 82120–11054–19345-35</string>
+
+
     <!-- error -->
     <string name="error_not_found_menu_item">Not found menu item id</string>
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout_ticket_background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_F5F5F5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_ticket_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth="1"
+        app:layout_constraintDimensionRatio="1:1.5"
+        android:background="@drawable/bg_white_round"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/layout_ticket_left_oval"
+        android:layout_width="16dp"
+        android:layout_height="32dp"
+        android:background="@drawable/style_half_circle_left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/layout_ticket_right_oval"
+        android:layout_width="16dp"
+        android:layout_height="32dp"
+        android:background="@drawable/style_half_circle_right"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
