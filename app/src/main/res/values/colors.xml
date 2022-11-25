@@ -21,5 +21,8 @@
     <!-- grayscale -->
     <color name="gray_2_8A8A8A">#8A8A8A</color>
 
+    <!--color for selector, selector는 background를 다룰 때 color가 아닌 Drawable 태그를 요구-->
+    <drawable name="item_background_pressed">#F2F6FF</drawable>
+    <drawable name="item_background">#FFFFFFFF</drawable>
 
 </resources>
