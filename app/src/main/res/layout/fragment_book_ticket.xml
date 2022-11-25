@@ -1,14 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_F5F5F5"
     tools:context=".presentation.ui.book.BookTicketFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ic_book_button_top"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_book_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_book_title" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/nav_book_ticket_title" />
+        android:id="@+id/tv_book_title"
+        style="@style/Medium.18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:text="승차권 예매"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_book"
+        android:layout_width="328dp"
+        android:layout_height="375dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_white_round"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_book_title">
+
+        <TextView
+            android:id="@+id/tv_book_roundtrip"
+            style="@style/Medium.16"
+            android:layout_width="53dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/bg_book_button_selected"
+            android:gravity="center"
+            android:text="왕복"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_book_oneway"
+            style="@style/Medium.16"
+            android:layout_width="53dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bg_book_button_selected"
+            android:gravity="center"
+            android:text="편도"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_book_roundtrip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_book_roundtrip"
+            app:layout_constraintTop_toTopOf="@+id/tv_book_roundtrip" />
+
+        <TextView
+            android:id="@+id/tv_book_depart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="61dp"
+            android:layout_marginTop="91dp"
+            android:text="출발"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_book_arrival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:text="도착"
+            app:layout_constraintBottom_toBottomOf="@+id/img_book_change_place"
+            app:layout_constraintStart_toEndOf="@+id/img_book_change_place"
+            app:layout_constraintTop_toTopOf="@+id/img_book_change_place" />
+
+        <ImageView
+            android:id="@+id/img_book_change_place"
+            android:layout_width="22dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="64dp"
+            android:src="@drawable/ic_change"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_book_depart"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toEndOf="@id/tv_book_depart"
+            app:layout_constraintTop_toTopOf="@id/tv_book_depart" />
+
+        <TextView
+            android:id="@+id/tv_book_depart_place"
+            style="@style/SemiBold.30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:drawableRight="@drawable/ic_down_arrow"
+            android:drawablePadding="9dp"
+            android:text="서울"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_book_depart" />
+
+        <TextView
+            android:id="@+id/tv_book_arrival_place"
+            style="@style/SemiBold.30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:drawableRight="@drawable/ic_down_arrow"
+            android:drawablePadding="9dp"
+            android:text="천안"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:src="@drawable/ic_big_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_book_depart_place"
+            app:layout_constraintStart_toEndOf="@+id/tv_book_depart_place"
+            app:layout_constraintTop_toTopOf="@+id/tv_book_depart_place" />
+
+        <TextView
+            android:id="@+id/tv_book_depart_date"
+            style="@style/Medium.14"
+            android:layout_width="144dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="188dp"
+            android:background="@color/sub_blue_F2F6FF"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:drawablePadding="8dp"
+            android:text="11.14.월"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_book_arrival_date"
+            style="@style/Medium.14"
+            android:layout_width="144dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/sub_blue_F2F6FF"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:drawablePadding="8dp"
+            android:text="11.17.월"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_book_depart_date"
+            app:layout_constraintStart_toEndOf="@+id/tv_book_depart_date"
+            app:layout_constraintTop_toTopOf="@+id/tv_book_depart_date" />
+
+        <TextView
+            android:id="@+id/tv_book_people"
+            style="@style/Medium.14"
+            android:layout_width="292dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="9dp"
+            android:background="@color/sub_blue_F2F6FF"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="8dp"
+            android:text="성인 1명"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintEnd_toEndOf="@+id/tv_book_arrival_date"
+            app:layout_constraintStart_toStartOf="@+id/tv_book_depart_date"
+            app:layout_constraintTop_toBottomOf="@+id/tv_book_arrival_date" />
+
+        <TextView
+            android:id="@+id/tv_book_close_station"
+            style="@style/Medium.14"
+            android:layout_width="292dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="9dp"
+            android:background="@color/sub_blue_F2F6FF"
+            android:drawableLeft="@drawable/ic_check"
+            android:drawablePadding="8dp"
+            android:text="인접역 표출, SR 연계 표출"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintEnd_toEndOf="@+id/tv_book_people"
+            app:layout_constraintStart_toStartOf="@+id/tv_book_people"
+            app:layout_constraintTop_toBottomOf="@+id/tv_book_people" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        style="@style/Medium.18"
+        android:layout_width="328dp"
+        android:layout_height="46dp"
+        android:background="@drawable/bg_book_button_apply"
+        android:gravity="center"
+        android:text="열차조회"
+        android:textColor="@color/white"
+        android:layout_marginTop="122dp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout_book"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout_book"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_book" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
