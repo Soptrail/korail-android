@@ -1,15 +1,338 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".presentation.ui.tour.TourProductFragment">
+    android:background="@color/background_F5F5F5"
+    tools:context=".presentation.ui.check.CheckTicketFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tv_check_ticket_title"
+        style="@style/Medium.18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing48"
+        android:text="@string/nav_check_ticket_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_check_ticket_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="승차권 확인" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing24"
+        app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_title">
+
+        <include
+            android:id="@+id/layout_check_ticket_background"
+            layout="@layout/layout_ticket_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv_check_ticket_qr_code"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/spacing24"
+            android:layout_marginEnd="@dimen/spacing16"
+            android:src="@drawable/ic_qr_code_2x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/check_ticket_qr_code_desc" />
+
+        <ImageView
+            android:id="@+id/iv_check_ticket_train_logo"
+            android:layout_width="55dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="@dimen/spacing16"
+            android:layout_marginTop="@dimen/spacing24"
+            android:src="@drawable/ic_train_logo_3x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/check_ticket_qr_code_desc" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_train_number"
+            style="@style/SemiBold.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing12"
+            android:text="@string/check_ticket_train_number"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_check_ticket_train_logo"
+            app:layout_constraintStart_toEndOf="@id/iv_check_ticket_train_logo"
+            app:layout_constraintTop_toTopOf="@id/iv_check_ticket_train_logo" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_start_date"
+            style="@style/Medium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing16"
+            android:layout_marginTop="@dimen/spacing9"
+            android:text="@string/check_ticket_start_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_train_number" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_delay_content"
+            style="@style/Medium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing16"
+            android:layout_marginTop="@dimen/spacing5"
+            android:background="@drawable/style_underline"
+            android:text="@string/check_ticket_delay_content"
+            android:textColor="@color/sub_orange_FF842C"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_start_date" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_departure"
+            style="@style/SemiBold.30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing32"
+            android:layout_marginTop="@dimen/spacing24"
+            android:text="@string/check_ticket_departure"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_delay_content" />
+
+        <ImageView
+            android:id="@+id/iv_check_ticket_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_big_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tv_check_ticket_departure"
+            app:layout_constraintEnd_toEndOf="@id/tv_check_ticket_arrival"
+            app:layout_constraintStart_toStartOf="@id/tv_check_ticket_departure"
+            app:layout_constraintTop_toTopOf="@id/tv_check_ticket_departure"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_arrival"
+            style="@style/SemiBold.30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing32"
+            android:text="@string/check_ticket_arrival"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_check_ticket_departure"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_check_ticket_departure" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_start_time"
+            style="@style/Medium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_ticket_start_time"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintEnd_toEndOf="@id/tv_check_ticket_departure"
+            app:layout_constraintStart_toStartOf="@id/tv_check_ticket_departure"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_departure" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_taken_time"
+            style="@style/Medium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_ticket_taken_time"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintBottom_toBottomOf="@id/tv_check_ticket_start_time"
+            app:layout_constraintEnd_toStartOf="@id/tv_check_ticket_end_time"
+            app:layout_constraintStart_toEndOf="@id/tv_check_ticket_start_time"
+            app:layout_constraintTop_toTopOf="@id/tv_check_ticket_start_time" />
+
+
+        <TextView
+            android:id="@+id/tv_check_ticket_end_time"
+            style="@style/Medium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_ticket_end_time"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintEnd_toEndOf="@id/tv_check_ticket_arrival"
+            app:layout_constraintStart_toStartOf="@id/tv_check_ticket_arrival"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_arrival" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_train_info_sign"
+            style="@style/Regular.12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing12"
+            android:background="@drawable/bg_orange_round"
+            android:paddingHorizontal="@dimen/spacing16"
+            android:paddingVertical="@dimen/spacing5"
+            android:text="@string/check_ticket_train_info_sign"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_taken_time" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_station_number_sign"
+            style="@style/Regular.12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing32"
+            android:layout_marginTop="@dimen/spacing48"
+            android:text="@string/check_ticket_train_station_number_sign"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_train_info_sign" />
+
+        <!--        TODO: data에만 bold 주기-->
+        <TextView
+            android:id="@+id/tv_check_ticket_station_number"
+            style="@style/Medium.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing12"
+            android:text="@string/check_ticket_station_number"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tv_check_ticket_station_number_sign"
+            app:layout_constraintStart_toStartOf="@id/tv_check_ticket_station_number_sign"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_station_number_sign" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_car_number_sign"
+            style="@style/Regular.12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_ticket_car_number_sign"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintBottom_toBottomOf="@id/tv_check_ticket_station_number_sign"
+            app:layout_constraintEnd_toStartOf="@id/tv_check_ticket_seat_number_sign"
+            app:layout_constraintStart_toEndOf="@id/tv_check_ticket_station_number_sign"
+            app:layout_constraintTop_toTopOf="@id/tv_check_ticket_station_number_sign" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_car_number"
+            style="@style/Medium.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing12"
+            android:text="@string/check_ticket_car_number"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tv_check_ticket_car_number_sign"
+            app:layout_constraintStart_toStartOf="@id/tv_check_ticket_car_number_sign"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_car_number_sign" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_seat_number_sign"
+            style="@style/Regular.12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing32"
+            android:text="@string/check_ticket_seat_number_sign"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintBottom_toBottomOf="@id/tv_check_ticket_car_number_sign"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_check_ticket_car_number_sign" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_seat_number"
+            style="@style/Medium.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing12"
+            android:text="@string/check_ticket_seat_number"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tv_check_ticket_seat_number_sign"
+            app:layout_constraintStart_toStartOf="@id/tv_check_ticket_seat_number_sign"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_seat_number_sign" />
+
+        <TextView
+            android:id="@+id/btn_check_ticket_refund"
+            style="@style/Medium.14"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/spacing16"
+            android:layout_marginTop="@dimen/spacing30"
+            android:background="@drawable/bg_sub_blue_round"
+            android:drawablePadding="@dimen/spacing8"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/spacing18"
+            android:text="@string/check_ticket_btn_text_refund"
+            app:drawableStartCompat="@drawable/ic_refund"
+            app:layout_constraintDimensionRatio="3.2:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_ticket_station_number"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <TextView
+            android:id="@+id/btn_check_ticket_give"
+            style="@style/Medium.14"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/spacing16"
+            android:background="@drawable/bg_sub_blue_round"
+            android:drawablePadding="@dimen/spacing8"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/spacing18"
+            android:text="@string/check_ticket_btn_text_give"
+            app:drawableStartCompat="@drawable/ic_give"
+            app:layout_constraintBottom_toBottomOf="@id/btn_check_ticket_refund"
+            app:layout_constraintDimensionRatio="3.2:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_check_ticket_refund"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <TextView
+            android:id="@+id/btn_check_ticket_declare"
+            style="@style/Medium.14"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing12"
+            android:background="@drawable/bg_sub_blue_round"
+            android:drawablePadding="@dimen/spacing8"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/spacing18"
+            android:text="@string/check_ticket_btn_text_declare"
+            app:drawableStartCompat="@drawable/ic_declare"
+            app:layout_constraintDimensionRatio="3.2:1"
+            app:layout_constraintEnd_toEndOf="@id/btn_check_ticket_refund"
+            app:layout_constraintStart_toStartOf="@id/btn_check_ticket_refund"
+            app:layout_constraintTop_toBottomOf="@id/btn_check_ticket_refund"
+            app:layout_constraintWidth_percent="0.4" />
+
+
+        <TextView
+            android:id="@+id/btn_check_ticket_help"
+            style="@style/Medium.14"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/spacing16"
+            android:background="@drawable/bg_sub_blue_round"
+            android:drawablePadding="@dimen/spacing8"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/spacing18"
+            android:text="@string/check_ticket_btn_text_help"
+            app:drawableStartCompat="@drawable/ic_help"
+            app:layout_constraintBottom_toBottomOf="@id/btn_check_ticket_declare"
+            app:layout_constraintDimensionRatio="3.2:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_check_ticket_declare"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <TextView
+            android:id="@+id/tv_check_ticket_bottom_info"
+            style="@style/Regular.12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing16"
+            android:layout_marginBottom="@dimen/spacing18"
+            android:text="@string/check_ticket_bottom_info"
+            android:textColor="@color/gray_2_8A8A8A"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
